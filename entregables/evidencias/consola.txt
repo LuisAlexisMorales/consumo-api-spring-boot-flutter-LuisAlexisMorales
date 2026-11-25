@@ -1,0 +1,363 @@
+Injecting <script> tag. Using callback.
+*** Request ***
+uri: http://localhost:8080/
+method: GET
+responseType: ResponseType.json
+followRedirects: true
+persistentConnection: true
+connectTimeout: 0:00:10.000000
+sendTimeout: null
+receiveTimeout: 0:00:10.000000
+transformTimeout: null
+receiveDataWhenStatusError: true
+extra: {}
+headers:
+ Content-Type: application/json
+data:
+null
+
+*** Response ***
+uri: http://localhost:8080/
+statusCode: 200
+statusMessage: 
+headers:
+ content-length: 40
+ content-type: text/plain;charset=UTF-8
+Response Text:
+Bienvenido a la API de la Biblioteca ITT
+
+Conexion OK -> 200: Bienvenido a la API de la Biblioteca ITT
+*** Request ***
+uri: http://localhost:8080/api/libros
+method: GET
+responseType: ResponseType.json
+followRedirects: true
+persistentConnection: true
+connectTimeout: 0:00:10.000000
+sendTimeout: null
+receiveTimeout: 0:00:10.000000
+transformTimeout: null
+receiveDataWhenStatusError: true
+extra: {}
+headers:
+ Content-Type: application/json
+data:
+null
+
+*** Response ***
+uri: http://localhost:8080/api/libros
+statusCode: 200
+statusMessage: 
+headers:
+ content-type: application/json
+Response Text:
+[{id: 1, titulo: Cien años de soledad, autor: Gabriel García Márquez, anio: 1967, disponible: true}, {id: 2, titulo: Pedro Páramo, autor: Juan Rulfo, anio: 1955, disponible: true}, {id: 3, titulo: El laberinto de la soledad, autor: Octavio Paz, anio: 1950, disponible: false}, {id: 4, titulo: Clean Code, autor: Robert C. Martin, anio: 2008, disponible: true}, {id: 5, titulo: Flutter in Action, autor: Eric Windmill, anio: 2020, disponible: true}]
+
+══╡ EXCEPTION CAUGHT BY FOUNDATION LIBRARY ╞════════════════════════════════════════════════════════
+The following assertion was thrown while dispatching notifications for LibroController:
+setState() or markNeedsBuild() called during build.
+This _InheritedProviderScope<LibroController?> widget cannot be marked as needing to build because
+the framework is already in the process of building widgets. A widget can be marked as needing to be
+built during the build phase only if one of its ancestors is currently building. This exception is
+allowed because the framework builds parent widgets before children, which means a dirty descendant
+will always be built. Otherwise, the framework might not visit this widget during this build phase.
+The widget on which setState() or markNeedsBuild() was called was:
+  _InheritedProviderScope<LibroController?>
+The widget which was currently being built when the offending call was made was:
+  Builder
+
+When the exception was thrown, this was the stack
+
+The LibroController sending notification was:
+  Instance of 'LibroController'
+════════════════════════════════════════════════════════════════════════════════════════════════════
+*** Request ***
+uri: http://localhost:8080/api/libros/1
+method: GET
+responseType: ResponseType.json
+followRedirects: true
+persistentConnection: true
+connectTimeout: 0:00:10.000000
+sendTimeout: null
+receiveTimeout: 0:00:10.000000
+transformTimeout: null
+receiveDataWhenStatusError: true
+extra: {}
+headers:
+ Content-Type: application/json
+data:
+null
+
+*** Response ***
+uri: http://localhost:8080/api/libros/1
+statusCode: 200
+statusMessage: 
+headers:
+ content-type: application/json
+Response Text:
+{"id":1,"titulo":"Cien años de soledad","autor":"Gabriel García Márquez","anio":1967,"disponible":true}
+
+Injecting <script> tag. Using callback.
+*** Request ***
+uri: http://localhost:8080/
+method: GET
+responseType: ResponseType.json
+followRedirects: true
+persistentConnection: true
+connectTimeout: 0:00:10.000000
+sendTimeout: null
+receiveTimeout: 0:00:10.000000
+transformTimeout: null
+receiveDataWhenStatusError: true
+extra: {}
+headers:
+ Content-Type: application/json
+data:
+null
+
+*** Response ***
+uri: http://localhost:8080/
+statusCode: 200
+statusMessage: 
+headers:
+ content-length: 40
+ content-type: text/plain;charset=UTF-8
+Response Text:
+Bienvenido a la API de la Biblioteca ITT
+
+Conexion OK -> 200: Bienvenido a la API de la Biblioteca ITT
+*** Request ***
+uri: http://localhost:8080/api/libros
+method: GET
+responseType: ResponseType.json
+followRedirects: true
+persistentConnection: true
+connectTimeout: 0:00:10.000000
+sendTimeout: null
+receiveTimeout: 0:00:10.000000
+transformTimeout: null
+receiveDataWhenStatusError: true
+extra: {}
+headers:
+ Content-Type: application/json
+data:
+null
+
+*** Response ***
+uri: http://localhost:8080/api/libros
+statusCode: 200
+statusMessage: 
+headers:
+ content-type: application/json
+Response Text:
+[{id: 1, titulo: Cien años de soledad, autor: Gabriel García Márquez, anio: 1967, disponible: true}, {id: 2, titulo: Pedro Páramo, autor: Juan Rulfo, anio: 1955, disponible: true}, {id: 3, titulo: El laberinto de la soledad, autor: Octavio Paz, anio: 1950, disponible: false}, {id: 4, titulo: Clean Code, autor: Robert C. Martin, anio: 2008, disponible: true}, {id: 5, titulo: Flutter in Action, autor: Eric Windmill, anio: 2020, disponible: true}]
+
+*** Request ***
+uri: http://localhost:8080/api/libros/1
+method: PUT
+responseType: ResponseType.json
+followRedirects: true
+persistentConnection: true
+connectTimeout: 0:00:10.000000
+sendTimeout: null
+receiveTimeout: 0:00:10.000000
+transformTimeout: null
+receiveDataWhenStatusError: true
+extra: {}
+headers:
+ Content-Type: application/json
+data:
+{titulo: Cien años de soledad (editado), autor: Gabriel García Márquez, anio: 1967, disponible: false}
+
+*** Response ***
+uri: http://localhost:8080/api/libros/1
+statusCode: 200
+statusMessage: 
+headers:
+ content-type: application/json
+Response Text:
+{"id":1,"titulo":"Cien años de soledad (editado)","autor":"Gabriel García Márquez","anio":1967,"disponible":false}
+
+*** Request ***
+uri: http://localhost:8080/api/libros
+method: GET
+responseType: ResponseType.json
+followRedirects: true
+persistentConnection: true
+connectTimeout: 0:00:10.000000
+sendTimeout: null
+receiveTimeout: 0:00:10.000000
+transformTimeout: null
+receiveDataWhenStatusError: true
+extra: {}
+headers:
+ Content-Type: application/json
+data:
+null
+
+*** Response ***
+uri: http://localhost:8080/api/libros
+statusCode: 200
+statusMessage: 
+headers:
+ content-type: application/json
+Response Text:
+[{id: 1, titulo: Cien años de soledad (editado), autor: Gabriel García Márquez, anio: 1967, disponible: false}, {id: 2, titulo: Pedro Páramo, autor: Juan Rulfo, anio: 1955, disponible: true}, {id: 3, titulo: El laberinto de la soledad, autor: Octavio Paz, anio: 1950, disponible: false}, {id: 4, titulo: Clean Code, autor: Robert C. Martin, anio: 2008, disponible: true}, {id: 5, titulo: Flutter in Action, autor: Eric Windmill, anio: 2020, disponible: true}]
+
+*** Request ***
+uri: http://localhost:8080/api/libros/1
+method: DELETE
+responseType: ResponseType.json
+followRedirects: true
+persistentConnection: true
+connectTimeout: 0:00:10.000000
+sendTimeout: null
+receiveTimeout: 0:00:10.000000
+transformTimeout: null
+receiveDataWhenStatusError: true
+extra: {}
+headers:
+ Content-Type: application/json
+data:
+null
+
+*** Response ***
+uri: http://localhost:8080/api/libros/1
+statusCode: 204
+statusMessage: 
+headers:
+Response Text:
+
+
+*** Request ***
+uri: http://localhost:8080/api/libros
+method: GET
+responseType: ResponseType.json
+followRedirects: true
+persistentConnection: true
+connectTimeout: 0:00:10.000000
+sendTimeout: null
+receiveTimeout: 0:00:10.000000
+transformTimeout: null
+receiveDataWhenStatusError: true
+extra: {}
+headers:
+ Content-Type: application/json
+data:
+null
+
+*** Response ***
+uri: http://localhost:8080/api/libros
+statusCode: 200
+statusMessage: 
+headers:
+ content-type: application/json
+Response Text:
+[{id: 2, titulo: Pedro Páramo, autor: Juan Rulfo, anio: 1955, disponible: true}, {id: 3, titulo: El laberinto de la soledad, autor: Octavio Paz, anio: 1950, disponible: false}, {id: 4, titulo: Clean Code, autor: Robert C. Martin, anio: 2008, disponible: true}, {id: 5, titulo: Flutter in Action, autor: Eric Windmill, anio: 2020, disponible: true}]
+
+Injecting <script> tag. Using callback.
+*** Request ***
+uri: http://localhost:8080/
+method: GET
+responseType: ResponseType.json
+followRedirects: true
+persistentConnection: true
+connectTimeout: 0:00:10.000000
+sendTimeout: null
+receiveTimeout: 0:00:10.000000
+transformTimeout: null
+receiveDataWhenStatusError: true
+extra: {}
+headers:
+ Content-Type: application/json
+data:
+null
+
+*** Response ***
+uri: http://localhost:8080/
+statusCode: 200
+statusMessage: 
+headers:
+ content-length: 40
+ content-type: text/plain;charset=UTF-8
+Response Text:
+Bienvenido a la API de la Biblioteca ITT
+
+Conexion OK -> 200: Bienvenido a la API de la Biblioteca ITT
+*** Request ***
+uri: http://localhost:8080/api/libros
+method: GET
+responseType: ResponseType.json
+followRedirects: true
+persistentConnection: true
+connectTimeout: 0:00:10.000000
+sendTimeout: null
+receiveTimeout: 0:00:10.000000
+transformTimeout: null
+receiveDataWhenStatusError: true
+extra: {}
+headers:
+ Content-Type: application/json
+data:
+null
+
+*** Response ***
+uri: http://localhost:8080/api/libros
+statusCode: 200
+statusMessage: 
+headers:
+ content-type: application/json
+Response Text:
+[{id: 2, titulo: Pedro Páramo, autor: Juan Rulfo, anio: 1955, disponible: true}, {id: 3, titulo: El laberinto de la soledad, autor: Octavio Paz, anio: 1950, disponible: false}, {id: 4, titulo: Clean Code, autor: Robert C. Martin, anio: 2008, disponible: true}, {id: 5, titulo: Flutter in Action, autor: Eric Windmill, anio: 2020, disponible: true}]
+
+══╡ EXCEPTION CAUGHT BY FOUNDATION LIBRARY ╞════════════════════════════════════════════════════════
+The following assertion was thrown while dispatching notifications for LibroController:
+setState() or markNeedsBuild() called during build.
+This _InheritedProviderScope<LibroController?> widget cannot be marked as needing to build because
+the framework is already in the process of building widgets. A widget can be marked as needing to be
+built during the build phase only if one of its ancestors is currently building. This exception is
+allowed because the framework builds parent widgets before children, which means a dirty descendant
+will always be built. Otherwise, the framework might not visit this widget during this build phase.
+The widget on which setState() or markNeedsBuild() was called was:
+  _InheritedProviderScope<LibroController?>
+The widget which was currently being built when the offending call was made was:
+  Builder
+
+When the exception was thrown, this was the stack
+
+The LibroController sending notification was:
+  Instance of 'LibroController'
+════════════════════════════════════════════════════════════════════════════════════════════════════
+*** Request ***
+uri: http://localhost:8080/api/libros/999
+method: GET
+responseType: ResponseType.json
+followRedirects: true
+persistentConnection: true
+connectTimeout: 0:00:10.000000
+sendTimeout: null
+receiveTimeout: 0:00:10.000000
+transformTimeout: null
+receiveDataWhenStatusError: true
+extra: {}
+headers:
+ Content-Type: application/json
+data:
+null
+
+*** DioException ***:
+uri: http://localhost:8080/api/libros/999
+DioException [bad response]: This exception was thrown because the response has a status code of 404 and RequestOptions.validateStatus was configured to throw for this status code.
+The status code of 404 has the following meaning: "Client error - the request contains bad syntax or cannot be fulfilled"
+Read more about status codes at https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
+In order to resolve this exception you typically have either to verify and fix your request code or you have to fix the server code.
+
+*** Response ***
+uri: http://localhost:8080/api/libros/999
+statusCode: 404
+statusMessage: 
+headers:
+ content-length: 0
+Response Text:
+
+

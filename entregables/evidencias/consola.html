@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Consola Flutter - PUT y DELETE</title>
+<style>
+  body { margin: 0; padding: 24px; background: #1e1e1e; color: #d4d4d4;
+         font-family: Consolas, "Courier New", monospace; font-size: 14px; line-height: 1.35; }
+  h1 { font-family: "Segoe UI", sans-serif; color: #569cd6; font-size: 20px; margin: 0 0 4px; }
+  p  { font-family: "Segoe UI", sans-serif; color: #9cdcfe; margin: 0 0 18px; }
+  h3 { font-family: "Segoe UI", sans-serif; color: #4ec9b0; font-size: 16px; margin: 20px 0 6px; }
+  pre { margin: 0; white-space: pre-wrap; }
+</style>
+</head>
+<body>
+<h1>Consola Flutter / LogInterceptor (Dio)</h1>
+<p>Peticiones del paso 9: PUT responde 200 y DELETE responde 204.</p>
+<h3>PUT /api/libros/1</h3><pre>*** Request ***
+uri: http://localhost:8080/api/libros/1
+method: PUT
+responseType: ResponseType.json
+followRedirects: true
+persistentConnection: true
+connectTimeout: 0:00:10.000000
+sendTimeout: null
+receiveTimeout: 0:00:10.000000
+transformTimeout: null
+receiveDataWhenStatusError: true
+extra: {}
+headers:
+ Content-Type: application/json
+data:
+{titulo: Cien años de soledad (editado), autor: Gabriel García Márquez, anio: 1967, disponible: false}
+
+*** Response ***
+uri: http://localhost:8080/api/libros/1
+statusCode: 200
+statusMessage: 
+headers:
+ content-type: application/json
+Response Text:
+{"id":1,"titulo":"Cien años de soledad (editado)","autor":"Gabriel García Márquez","anio":1967,"disponible":false}
+</pre>
+<h3>DELETE /api/libros/1</h3><pre>*** Request ***
+uri: http://localhost:8080/api/libros/1
+method: DELETE
+responseType: ResponseType.json
+followRedirects: true
+persistentConnection: true
+connectTimeout: 0:00:10.000000
+sendTimeout: null
+receiveTimeout: 0:00:10.000000
+transformTimeout: null
+receiveDataWhenStatusError: true
+extra: {}
+headers:
+ Content-Type: application/json
+data:
+null
+
+*** Response ***
+uri: http://localhost:8080/api/libros/1
+statusCode: 204
+statusMessage: 
+headers:
+Response Text:
+
+</pre>
+</body>
+</html>
