@@ -1,0 +1,7 @@
+﻿GET http://localhost:8080/ -> 200 Bienvenido a la API de la Biblioteca ITT
+GET http://localhost:8080/api/libros -> 200 [{"id":1,"titulo":"Cien aÃ±os de soledad","autor":"Gabriel GarcÃ­a MÃ¡rquez","anio":1967,"disponible":true},{"id":2,"titulo":"Pedro PÃ¡ramo","autor":"Juan Rulfo","anio":1955,"disponible":true},{"id":3,"titulo":"El laberinto de la soledad","autor":"Octavio Paz","anio":1950,"disponible":false},{"id":4,"titulo":"Clean Code","autor":"Robert C. Martin","anio":2008,"disponible":true},{"id":5,"titulo":"Flutter in Action","autor":"Eric Windmill","anio":2020,"disponible":true}]
+GET http://localhost:8080/api/libros/1 -> 200 {"id":1,"titulo":"Cien aÃ±os de soledad","autor":"Gabriel GarcÃ­a MÃ¡rquez","anio":1967,"disponible":true}
+POST http://localhost:8080/api/libros -> 201 {"id":6,"titulo":"Libro de prueba API","autor":"Practica","anio":2026,"disponible":true}
+PUT http://localhost:8080/api/libros/6 -> 200 {"id":6,"titulo":"Libro de prueba API (editado)","autor":"Practica","anio":2026,"disponible":false}
+DELETE http://localhost:8080/api/libros/6 -> 204 
+DELETE http://localhost:8080/api/libros/6 -> 404 Error en el servidor remoto: (404) No se encontró.

@@ -21,18 +21,20 @@ class LibroRepository {
     return Libro.fromJson(data);
   }
 
-  // ---------------------------------------------------------------------------
-  // TODO 2a (PUT): llamen a service.actualizar(libro.id!, libro.toJson())
-  // y conviertan la respuesta con Libro.fromJson(...).
-  // ---------------------------------------------------------------------------
+  // ✅ PUT: el id va en la URL y el body sale de libro.toJson()
   Future<Libro> actualizar(Libro libro) async {
-    throw UnimplementedError('TODO 2a: falta actualizar en LibroRepository');
+    final data = await service.actualizar(libro.id!, libro.toJson());
+    return Libro.fromJson(data);
   }
 
-  // ---------------------------------------------------------------------------
-  // TODO 2b (DELETE): llamen a service.eliminar(id).
-  // ---------------------------------------------------------------------------
+  // ✅ DELETE
   Future<void> eliminar(int id) async {
-    throw UnimplementedError('TODO 2b: falta eliminar en LibroRepository');
+    await service.eliminar(id);
+  }
+
+  // ✅ Reto: GET de un solo libro, convertido a Libro
+  Future<Libro> getLibro(int id) async {
+    final data = await service.getLibro(id);
+    return Libro.fromJson(data);
   }
 }

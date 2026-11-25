@@ -10,3 +10,10 @@ backend/.mvn/wrapper/maven-wrapper.jar
 .vscode/*
 !.vscode/extensions.json
 .DS_Store
+
+# Flutter/Dart (generado por flutter build y pub get)
+**/.dart_tool/
+**/build/
+biblioteca_app/android/.gradle/
+biblioteca_app/android/local.properties
+biblioteca_app/windows/build/

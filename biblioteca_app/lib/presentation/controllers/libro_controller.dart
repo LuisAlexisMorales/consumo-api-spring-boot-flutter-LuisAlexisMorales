@@ -14,6 +14,11 @@ class LibroController extends ChangeNotifier {
   bool loading = false;
   String? error;
 
+  // Estado de la pantalla de detalle (Reto: GET /api/libros/{id}).
+  Libro? detalle;
+  bool cargandoDetalle = false;
+  String? errorDetalle;
+
   /// Busca un libro ya cargado en la lista (lo usa la vista de editar).
   Libro? buscarPorId(int id) {
     for (final l in items) {
@@ -52,22 +57,50 @@ class LibroController extends ChangeNotifier {
     }
   }
 
-  // ---------------------------------------------------------------------------
-  // TODO 3a (PUT): sigan el mismo patron que crear():
-  //   1. await repo.actualizar(libro);
-  //   2. await cargar();
-  //   3. return null;
-  //   Atrapen DioException y cualquier otro error, igual que en crear().
-  // ---------------------------------------------------------------------------
+  // ✅ PUT: actualiza, recarga la lista y regresa null si salió bien.
   Future<String?> actualizar(Libro libro) async {
-    return 'TODO 3a: falta implementar actualizar() en LibroController';
+    try {
+      await repo.actualizar(libro);
+      await cargar();
+      return null;
+    } on DioException catch (e) {
+      return _mensaje(e);
+    } catch (e) {
+      return '$e';
+    }
   }
 
-  // ---------------------------------------------------------------------------
-  // TODO 3b (DELETE): igual que el anterior, pero con repo.eliminar(id).
-  // ---------------------------------------------------------------------------
+  // ✅ DELETE: elimina, recarga la lista y regresa null si salió bien.
   Future<String?> eliminar(int id) async {
-    return 'TODO 3b: falta implementar eliminar() en LibroController';
+    try {
+      await repo.eliminar(id);
+      await cargar();
+      return null;
+    } on DioException catch (e) {
+      return _mensaje(e);
+    } catch (e) {
+      return '$e';
+    }
+  }
+
+  // ✅ Reto: consulta un libro por id para la pantalla de detalle.
+  Future<void> cargarLibro(int id) async {
+    cargandoDetalle = true;
+    detalle = null;
+    errorDetalle = null;
+    notifyListeners();
+    try {
+      detalle = await repo.getLibro(id);
+      if (detalle == null) errorDetalle = 'El libro no existe';
+    } on DioException catch (e) {
+      errorDetalle = e.response?.statusCode == 404
+          ? 'El libro no existe'
+          : _mensaje(e);
+    } catch (e) {
+      errorDetalle = '$e';
+    }
+    cargandoDetalle = false;
+    notifyListeners();
   }
 
   String _mensaje(DioException e) {

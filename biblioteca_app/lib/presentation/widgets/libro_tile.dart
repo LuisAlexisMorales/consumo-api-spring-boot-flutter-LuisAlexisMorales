@@ -36,6 +36,10 @@ class LibroTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
+      // Reto: tocar el renglón abre el detalle (GET /api/libros/{id}).
+      onTap: libro.id == null
+          ? null
+          : () => context.push('/libro/${libro.id}'),
       leading: Icon(
         libro.disponible ? Icons.menu_book : Icons.lock_clock,
         color: libro.disponible ? Colors.green : Colors.orange,

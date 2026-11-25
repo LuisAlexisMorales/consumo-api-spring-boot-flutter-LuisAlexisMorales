@@ -1,5 +1,6 @@
 import 'package:go_router/go_router.dart';
 
+import '../presentation/screens/detalle_libro_screen.dart';
 import '../presentation/screens/editar_libro_screen.dart';
 import '../presentation/screens/home_screen.dart';
 import '../presentation/screens/nuevo_libro_screen.dart';
@@ -10,6 +11,7 @@ import '../presentation/screens/splash_screen.dart';
 ///   /home        -> lista de libros (GET)
 ///   /nuevo       -> formulario de alta (POST)
 ///   /editar/:id  -> formulario de edicion (PUT)
+///   /libro/:id   -> detalle del libro (GET de uno solo)  [Reto]
 final appRouter = GoRouter(
   initialLocation: '/splash',
   routes: [
@@ -21,6 +23,13 @@ final appRouter = GoRouter(
       builder: (_, state) {
         final id = int.parse(state.pathParameters['id']!);
         return EditarLibroScreen(id: id);
+      },
+    ),
+    GoRoute(
+      path: '/libro/:id',
+      builder: (_, state) {
+        final id = int.parse(state.pathParameters['id']!);
+        return DetalleLibroScreen(id: id);
       },
     ),
   ],
